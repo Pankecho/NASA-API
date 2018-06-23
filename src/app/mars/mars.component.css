@@ -1,0 +1,21 @@
+.card-container{
+  align-items: center;
+}
+
+.card-content{
+  width: 75%;
+  margin: auto;
+}
+
+.loader {
+  align-items: center;
+  margin: 10px;
+}
+
+mat-progress-spinner{
+  margin: auto;
+}
+
+h3{
+  text-align: center;
+}

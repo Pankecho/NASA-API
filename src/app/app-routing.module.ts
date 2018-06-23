@@ -3,19 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { MaterialDemoComponent } from './material/material-demo/material-demo.component';
 import {HomeComponent} from './home/home.component';
 import {AppComponent} from './app.component';
+import {MarsComponent} from './mars/mars.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'apod',
     pathMatch: 'full'
   },
   {
-    path: 'material-demo',
-    component: MaterialDemoComponent
+    path: 'mars-rover',
+    component: MarsComponent
   },
   {
-    path: 'home',
+    path: 'apod',
     component: HomeComponent
   }
 ];

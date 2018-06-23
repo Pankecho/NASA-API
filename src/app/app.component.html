@@ -5,7 +5,16 @@
             menu
         </mat-icon>
     </button>
-    <span>Astronomy's Photo of the Day Clone</span>
+    <span>NASA API</span>
 </mat-toolbar>
+
+<nav>
+  <button mat-button color="primary" [routerLink]="'/apod'">
+    APOD
+  </button>
+  <button mat-button color="primary" [routerLink]="'/mars-rover'">
+    Mars Rover
+  </button>
+</nav>
 
 <router-outlet></router-outlet>
