@@ -10,7 +10,7 @@
 <div>
   <mat-form-field>
     <span matPrefix>+1&nbsp;</span>
-    <input matInput type="number" placeholder="Telefono">
+    <input matInput type="number" placeholder="Telefono" (keypress)="onChange($event)">
   </mat-form-field>
 </div>
 

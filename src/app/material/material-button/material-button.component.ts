@@ -12,4 +12,7 @@ export class MaterialButtonComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick($event) {
+    console.log('Evento: ', $event);
+  }
 }

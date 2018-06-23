@@ -13,7 +13,8 @@ const routes: Routes = [
   {
     path: 'material-demo',
     component: MaterialDemoComponent
-  },{
+  },
+  {
     path: 'home',
     component: HomeComponent
   }

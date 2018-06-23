@@ -1,10 +1,6 @@
 <mat-list>
-  <mat-list-item>
-    <span mat-line><b>Juan Pablo</b></span>
-    <span mat-line>Oaxaca</span>
-  </mat-list-item>
-  <mat-list-item>
-    <span mat-line><b>Jose</b></span>
-    <span mat-line>Nuevo Leon</span>
-  </mat-list-item>
+  <!-- Al momento de hacer click en el elemento de app-item-estudiante se manda el evento del contexto de item-estudiante -->
+  <app-item-estudiante *ngFor="let estudiante of estudiantes" [estudiante]="estudiante" (onMouseClick)="onMouseClick($event)">
+
+  </app-item-estudiante>
 </mat-list>
