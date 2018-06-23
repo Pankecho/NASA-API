@@ -1,43 +1,46 @@
-<div class="card-container">
-  <mat-card class="card-content">
-    <mat-form-field>
-      <mat-select placeholder="Please, select a camera" [(ngModel)]="currentCamera">
-        <mat-option *ngFor="let camera of cameras" [value]="camera" (click)="onSelect(camera)">
-          {{camera}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-card>
-</div>
+<mat-card>
+  <mat-form-field>
+    <mat-select placeholder="Please, select a camera" [(ngModel)]="currentCamera">
+      <mat-option *ngFor="let camera of cameras" [value]="camera" (click)="onSelect(camera)">
+        {{camera}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>
 
 <div class="loader" *ngIf="loading">
   <mat-progress-spinner mode="indeterminate" align="center"></mat-progress-spinner>
 </div>
 
-<div class="card-container">
-  <mat-card class="card-content" *ngFor="let image of marsImages">
-    <mat-card-header>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/290px-NASA_logo.svg.png" alt="Logo de la nasa" mat-card-avatar>
-      <mat-card-title>
-        <b>{{image.rover.name}}</b>
-      </mat-card-title>
-      <mat-card-subtitle>
-        {{image.earth_date | date}}
-      </mat-card-subtitle>
-    </mat-card-header>
-    <img [src]="image.img_src" alt="" mat-card-image>
+<div class="list-container">
+  <mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let image of marsImages">
+      <mat-card class="card-content">
+        <mat-card-header>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/290px-NASA_logo.svg.png" alt="Logo de la nasa" mat-card-avatar>
+          <mat-card-title>
+            <b>{{image.rover.name}}</b>
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{image.earth_date | date}}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img [src]="image.img_src" alt="" mat-card-image>
 
-    <mat-card-actions>
-      <button mat-icon-button color="accent">
-        <mat-icon>
-          favorite
-        </mat-icon>
-      </button>
-      <button mat-icon-button color="primary">
-        <mat-icon>
-          launch
-        </mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+        <mat-card-actions>
+          <button mat-icon-button color="accent">
+            <mat-icon>
+              favorite
+            </mat-icon>
+          </button>
+          <button mat-icon-button color="primary">
+            <mat-icon>
+              launch
+            </mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
 </div>
